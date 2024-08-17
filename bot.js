@@ -1,10 +1,12 @@
 const { Bot } = require("grammy");
 require('dotenv').config();
 
-// Create a bot object
-const bot = new Bot(process.env.BOT_TOKEN); // <-- place your bot token in this string
+if (!process.env.BOT_TOKEN) {
+    console.error("Error: BOT_TOKEN is not defined in the environment variables.");
+    process.exit(1);
+}
 
-// Register listeners to handle messages
+const bot = new Bot(process.env.BOT_TOKEN);
 
 bot.command('start', (ctx) => {
     const message = "Oh!";
@@ -14,15 +16,10 @@ bot.command('start', (ctx) => {
     ctx.reply(`${message} Repository: ${repo}, One Click Deploy: ${deploy}`);
 });
 
-// Handle any text message
 bot.on('message:text', (ctx) => {
     const userMessage = ctx.message.text;
-    // Define your reply message
     const replyMessage = `You said: ${userMessage} to Zerops. Try /start to get started!`;
-    
-    // Send the reply
     ctx.reply(replyMessage);
 });
 
-// Start the bot (using long polling)
-bot.start();
+bot.start(console.log("Bot is running and connected to Telegram successfully! 🎉🎉"));

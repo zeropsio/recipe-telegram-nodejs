@@ -1,0 +1,11 @@
+zerops:
+  - setup: bot
+    build:
+      base: nodejs@20
+      buildCommands:
+        - pnpm i
+      deployFiles:
+        - /
+    run:
+      base: nodejs@20
+      start: pnpm start
