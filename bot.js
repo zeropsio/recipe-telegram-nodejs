@@ -22,4 +22,4 @@ bot.on('message:text', (ctx) => {
     ctx.reply(replyMessage);
 });
 
-bot.start(console.log("Bot is running and connected to Telegram successfully! 🎉🎉"));
+bot.start(console.log("Bot is running and connected to Telegram successfully! 🎉"));
