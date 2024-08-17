@@ -1,2 +1,3 @@
-# recipe-gammy-nodejs
-Telegram Bot on Zerops
+# Telegram Grammy Bot - Node.js
+
+Grammy Bot for Telegram running on Node.js service on Zerops.
