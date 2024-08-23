@@ -10,8 +10,8 @@ const bot = new Bot(process.env.BOT_TOKEN);
 
 bot.command('start', (ctx) => {
     const message = "Oh!";
-    const repo = "https://github.com/zeropsio/recipe-grammy-nodejs";
-    const deploy = "https://app.zerops.io/recipe/telegram-grammy";
+    const repo = "https://github.com/zeropsio/recipe-telegram-nodejs";
+    const deploy = "https://app.zerops.io/recipe/telegram-bot";
 
     ctx.reply(`${message} Repository: ${repo}, One Click Deploy: ${deploy}`);
 });
